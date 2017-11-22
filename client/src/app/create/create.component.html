@@ -1,0 +1,12 @@
+<h1>Put the question and options here:</h1>
+<p><a [routerLink]="['/dashboard']">Cancel</a></p>
+<div>
+  <form #form="ngForm" (submit)="addpoll()">
+    <p>Question: <input type="text" name="question"required minlength="8" [(ngModel)]="poll.question" #question="ngModel"><span *ngIf="question.dirty&&question.invalid&&question.errors.required">question is required</span><span *ngIf="question.invalid&&question.errors.minlength">question has to be at least 8 characters</span></p>
+    <p>Option1: <input type="text" name="option1"required minlength="3" [(ngModel)]="poll.option1" #option1="ngModel"><span *ngIf="option1.dirty&&option1.invalid&&option1.errors.required">option1 is required</span><span *ngIf="option1.invalid&&option1.errors.minlength">option1 has to be at least 3 characters</span></p>
+    <p>Option2: <input type="text" name="option2"required minlength="3" [(ngModel)]="poll.option2" #option2="ngModel"><span *ngIf="option2.dirty&&option2.invalid&&option2.errors.required">option2 is required</span><span *ngIf="option2.invalid&&option2.errors.minlength">option2 has to be at least 3 characters</span></p>
+    <p>Option3: <input type="text" name="option3"required minlength="3" [(ngModel)]="poll.option3" #option3="ngModel"><span *ngIf="option3.dirty&&option3.invalid&&option3.errors.required">option3 is required</span><span *ngIf="option3.invalid&&option3.errors.minlength">option3 has to be at least 3 characters</span></p>
+    <p>Option4: <input type="text" name="option4"required minlength="3" [(ngModel)]="poll.option4" #option4="ngModel"><span *ngIf="option4.dirty&&option4.invalid&&option4.errors.required">option4 is required</span><span *ngIf="option4.invalid&&option4.errors.minlength">option4 has to be at least 3 characters</span></p>
+    <p><input type="submit" value="Create Poll" [disabled]="form.invalid"></p>
+  </form>
+</div>

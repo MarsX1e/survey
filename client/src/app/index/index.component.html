@@ -1,0 +1,6 @@
+<div>
+  <form #form="ngForm" (submit)="adduser()">
+    <p>Name: <input type="text" name="name"required minlength="2" [(ngModel)]="user.name" #name="ngModel"><span *ngIf="name.dirty&&name.invalid&&name.errors.required">name is required</span><span *ngIf="name.invalid&&name.errors.minlength">name has to be at least 2 characters</span></p>
+    <p><input type="submit" value="Enter" [disabled]="form.invalid"></p>
+  </form>
+</div>

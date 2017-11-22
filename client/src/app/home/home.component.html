@@ -1,0 +1,21 @@
+<p>Current Polls:</p> 
+<p><a [routerLink]="['/create']">Create a New Poll</a></p>
+<p><a [routerLink]="['/logout']">Logout</a></p>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Survey Question</th>
+            <th>Date Posted</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let poll of polls">
+            <th>{{poll._post.name}}</th>
+            <th><a [routerLink]="['/poll/',poll._id]">{{poll.question}}</a></th>
+            <th>{{poll.createdAt}}</th>
+            <th *ngIf="poll._post._id==user._id"><a [routerLink]="['/delete',poll._id]">delete</a></th>
+        </tr>
+    </tbody>
+</table>
